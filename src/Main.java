@@ -7,10 +7,12 @@ public class Main {
         m.gamble(g1);
         if (m.gamble(g1) == 1){
             System.out.println("THE GAMBLE IS SUCCESSFULL");
+            g1.amtwon= g1.amtwon+1;
         }
         else{
             System.out.println("The gamble is Unsucessfull");
         }
+        System.out.println("The total amount won is :"+g1.amtwon);
 
     }
     public int gamble(Gambler g){
@@ -18,7 +20,6 @@ public class Main {
         Random r1 = new Random();
         stakein=1;
         g.stake=g.stake-1;
-        int gb = r1.nextInt(2);
-        return gb;
+        return r1.nextInt(2);
     }
 }
